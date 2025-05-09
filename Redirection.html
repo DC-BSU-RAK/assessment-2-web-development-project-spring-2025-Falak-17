@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation Receipt</title>
+  <link rel="stylesheet" href="Css/reservation styles.css" />
+  <style>
+    
+    .receipt-image {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="redirect-container">
+    <h1>Advance Booking Fee</h1>
+    <p>Please confirm your booking by paying an advance fee of <strong>$30.00</strong>.</p>
+    <button id="payBtn">Pay Now</button>
+
+    <div id="receiptSection" style="display: none;">
+      <img src="Images/bbq.jpg" alt="Receipt" class="receipt-image" />
+      <h2>Booking Receipt</h2>
+      <div id="receiptContent"></div>
+      <button id="downloadBtn">Download Receipt</button>
+
+      <div style="margin-top: 30px;">
+        <h2>Thank You for Your Reservation!</h2>
+        <p>You will be redirected to the homepage shortly.</p>
+        <p>If not, <a href="index.html">click here</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get URL parameters
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        firstName: params.get('firstName') || '',
+        lastName: params.get('lastName') || '',
+        email: params.get('email') || '',
+        phone: params.get('phone') || '',
+        date: params.get('date') || '',
+        time: params.get('time') || '',
+        guests: params.get('guests') || ''
+      };
+    }
+
+    // Handle payment button click
+    document.getElementById('payBtn').addEventListener('click', function () {
+      alert("Payment Successful (Simulated)");
+
+      const data = getQueryParams();
+
+      if (!data.firstName || !data.email) {
+        alert("Missing data. Please submit the booking form first.");
+        return;
+      }
+
+      // Populate receipt
+      const receiptHTML = `
+        <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Date:</strong> ${data.date}</p>
+        <p><strong>Time:</strong> ${data.time}</p>
+        <p><strong>Guests:</strong> ${data.guests} persons</p>
+        <p><strong>Amount Paid:</strong> $30.00</p>
+        <p><strong>Payment Method:</strong> Simulated</p>
+      `;
+
+      document.getElementById('receiptContent').innerHTML = receiptHTML;
+
+      // Show receipt and hide button
+      document.getElementById('payBtn').style.display = 'none';
+      document.getElementById('receiptSection').style.display = 'block';
+
+      // Auto-redirect
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 10000); // 10 seconds
+    });
+
+    // Handle download
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      const text = document.getElementById('receiptContent').innerText;
+      const blob = new Blob([text], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = "booking_receipt.txt";
+      link.click();
+    });
+  </script>
+</body>
+</html>
