@@ -28,13 +28,4 @@ function revealChefCards() {
   });
 }
 
-// Animate items in dishes section on scroll
-function revealDishes() {
-  const items = document.querySelectorAll(".item.animate-on-scroll");
-  items.forEach((item) => {
-    const itemTop = item.getBoundingClientRect().top;
-    if (itemTop < window.innerHeight - 50) {
-      item.classList.add("visible");
-    }
-  });
-}
+
