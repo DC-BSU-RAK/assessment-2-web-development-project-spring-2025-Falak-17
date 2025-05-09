@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');                         /* Importing Font Awesome for icons */
+@import url('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');                                          /* Importing jQuery library */
+@import url('https://fonts.googleapis.com');                                                                               /* Importing Google Fonts */
+@import url('https://fonts.gstatic.com');                                                                                  /* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');         /* Importing Source Sans Pro font from Google Fonts */
 
 * {
   margin: 0;
@@ -30,17 +35,51 @@ body {
   z-index: 1;
 }
 
+.nav-container { position: relative;
+                 padding:5rem;
+                 text-align:left;
+                 color:var(--white);
+                 font-size:1.6em;
+                 z-index: 3; }
+
+.nav-container ul { display: flex;                                                        /* Flexbox layout */
+                    flex-wrap: wrap;                                                      /* Allow wrapping */
+                    list-style: none;                                                     /* Remove bullets */
+                    gap: 20px;                                                            /* Space between items */
+                    font-size: 26px;                                                      /* Font size */
+                    justify-content: center; }                                            /* Center the navigation items */
+
+.nav-container a { color: white;                                                        /* Text color */
+                   text-decoration: none;                                                 /* Remove underline */
+                   position: relative;                                                    /* Set positioning context */
+                   transition: 0.3s; }                                                    /* Smooth transition for hover effects */
+
+.nav-container a::after { content: '';                                                    /* Empty content for the pseudo-element */
+                          position: absolute;                                             /* Position relative to the link */
+                        width: 0%;                                                        /* Start with no width */
+                        height: 2px;                                                      /* Set height */
+                        left: 0;                                                          /* Start at the left edge */
+                        bottom: -3px;                                                     /* Position below the link */
+                        background: orange;                                             /* Orange color */
+                        transition: width 0.3s; }                                         /* Smooth width transition */
+
+.nav-container a:hover { color: orange; }                                               /* Change text color to orange */
+
+.nav-container a:hover::after { width: 100%; }
+
 .overlay {
-  position: relative;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  right: 25%;
+  transform: translate(50%, 50%);
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 60px 20px;
   text-align: center;
   max-width: 800px;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
   color: #ccc;
+  animation: moveUpDown 1.5s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -66,7 +105,14 @@ input::placeholder {
   padding: 60px 20px;
   max-width: 600px;
   margin: auto;
+  margin-bottom: 80px;
   text-align: center;
+  animation: slideIn 1.2s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+.info-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.9);
 }
 
 .highlight {
@@ -93,7 +139,7 @@ input::placeholder {
 .booking-form input, .booking-form button {
   padding: 12px;
   background: #111;
-  border: 1px solid #e7c275;
+  border: 1px solid #e6ba5c;
   color: #eee;
   width: 100%;
 }
@@ -103,44 +149,63 @@ input::placeholder {
   color: #000;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: left 0.5s ease;
+}
+
+.booking-form button:hover::before {
+  left: 100%;
 }
 
 .booking-form button:hover {
   background-color: #c9a44f;
   transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.footer {
-  background-color: black;
-  width: 100%;
-  display: flex;
-  align-items: top;
-  padding: 5rem 0;
-}
-
-.footer section {
-  padding: 1rem 2rem;
-  width: 100%;
-  vertical-align: top;
-}
-
-.footer section h3 {
-  color: var(--white);
-}
-
-.footer section a {
-  color: var(--gray);
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  margin: 15px 0;
-  transition: color 0.3s ease;
-}
-
-.footer section a:hover {
-  color: #e7c275;
-}
+.footer { background-color: black;
+          width:100%;
+          display:flex;
+          align-items:top;
+          padding:5rem 0; }
+.footer section { padding:1rem 2rem;
+                  width:100%;
+                  vertical-align:top; }
+.footer section h3 { color:var(--white); }
+.footer section a { color:var(--gray);
+                    display:flex;
+                    align-items:center;
+                    white-space:nowrap;
+                    margin:15px 0; }
+.footer section a:hover { color:var(--white);
+                          transition: color 0.3s ease; }
+.footer section:nth-child(2) a:before,.footer section:nth-child(3) a:before { content:"";
+                                                                              font-family:"FontAwesome";
+                                                                              margin-right:5px;
+                                                                              color:var(--white); }
+.footer section a span { margin:0 10px; }
+.sub-footer { background-color: black;
+              text-align:Center;
+              color:var(--gray);
+              padding:1rem 0; }
+              
+@media (max-width:1020px){ .footer{ display:block; }
+                           .footer section { padding:1rem 1rem; }
+                           .footer section:nth-child(2), .footer section:nth-child(3) { width:49%;
+                                                                                        display:inline-block; } }   
 
 .download-button {
   margin-top: 20px;
@@ -181,12 +246,4 @@ input::placeholder {
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
-}
-
-.hero, .info-section, .footer {
-  animation: fadeInUp 1s ease-in-out;
-}
-
-.booking-form button:hover, .download-button:hover {
-  animation: pulse 0.6s ease-in-out;
 }
