@@ -84,7 +84,7 @@ body {
 
 .hero h1 {
   font-size: 3.5rem;
-  color: #e7c275;
+  color: orange;
   margin-bottom: 20px;
   letter-spacing: 3px;
 }
@@ -93,7 +93,7 @@ body {
   display: block;
   font-size: 2rem;
   margin-top: 30px;
-  color: #e7c275;
+  color: orange;
   animation: moveUpDown 1.5s ease-in-out infinite;
 }
 
@@ -117,7 +117,7 @@ input::placeholder {
 
 .highlight {
   font-size: 19px;
-  color: #e7c275;
+  color: orange;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -132,20 +132,20 @@ input::placeholder {
   flex-direction: column;
   gap: 15px;
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #e7c275;
+  border: 1px solid orange;
   padding: 30px;
 }
 
 .booking-form input, .booking-form button {
   padding: 12px;
   background: #111;
-  border: 1px solid #e6ba5c;
+  border: 1px solid orange;
   color: #eee;
   width: 100%;
 }
 
 .booking-form button {
-  background-color: #e7c275;
+  background-color: #c6871a;
   color: #000;
   font-weight: bold;
   cursor: pointer;
@@ -171,7 +171,7 @@ input::placeholder {
 }
 
 .booking-form button:hover {
-  background-color: #c9a44f;
+  background-color: orange;
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
@@ -190,7 +190,7 @@ input::placeholder {
                     align-items:center;
                     white-space:nowrap;
                     margin:15px 0; }
-.footer section a:hover { color:var(--white);
+.footer section a:hover { color: orange;
                           transition: color 0.3s ease; }
 .footer section:nth-child(2) a:before,.footer section:nth-child(3) a:before { content:"";
                                                                               font-family:"FontAwesome";
