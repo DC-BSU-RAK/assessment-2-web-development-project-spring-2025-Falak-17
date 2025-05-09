@@ -41,7 +41,8 @@ a { text-decoration:none; }
 a, button{ transition:0.5s; }
     
 /* Header styling */
-.default-hero-banner{ width:100%;
+.default-hero-banner{ margin-top: -30px;
+                      width:100%;
                       background-image:url("https://i.ibb.co/DgRMWdv/default-bg.jpg");
                       background-size:cover;
                       background-attachment:fixed; }  
@@ -49,6 +50,31 @@ a, button{ transition:0.5s; }
                                text-align:center;
                                color:var(--white);
                                font-size:1.6em; }
+
+.nav-container ul { display: flex;                                                        /* Flexbox layout */
+                    flex-wrap: wrap;                                                      /* Allow wrapping */
+                    list-style: none;                                                     /* Remove bullets */
+                    gap: 20px;                                                            /* Space between items */
+                    font-size: 30px;                                                      /* Font size */
+                    justify-content: center; }                                            /* Center the navigation items */
+
+.nav-container a { color: white;                                                        /* Text color */
+                   text-decoration: none;                                                 /* Remove underline */
+                   position: relative;                                                    /* Set positioning context */
+                   transition: 0.3s; }                                                    /* Smooth transition for hover effects */
+
+.nav-container a::after { content: '';                                                    /* Empty content for the pseudo-element */
+                          position: absolute;                                             /* Position relative to the link */
+                        width: 0%;                                                        /* Start with no width */
+                        height: 2px;                                                      /* Set height */
+                        left: 0;                                                          /* Start at the left edge */
+                        bottom: -3px;                                                     /* Position below the link */
+                        background: orange;                                             /* Orange color */
+                        transition: width 0.3s; }                                         /* Smooth width transition */
+
+.nav-container a:hover { color: orange; }                                               /* Change text color to orange */
+
+.nav-container a:hover::after { width: 100%; }  
     
 /* Layout for list sections */                         
 .list-section { width:100%;
