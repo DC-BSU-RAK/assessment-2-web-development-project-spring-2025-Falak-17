@@ -7,42 +7,99 @@
   <link rel="stylesheet" href="Css/reservation styles.css" />
 </head>
 <body>
+
   <header class="hero">
     <img src="Images/bbq.jpg" alt="Dining Table" class="hero-img">
     <div class="overlay">
       <h1>BOOKING</h1>
       <p>
-        We are delighted to host you for a memorable dining experience. We look forward to welcoming you to our restaurant and creating an unforgettable dining experience for you.
+        We are delighted to host you for a memorable dining experience. We look forward to welcoming you to our restaurant.
       </p>
       <span class="arrow">&#x25BC;</span>
     </div>
   </header>
 
   <section class="info-section">
-    <p class="highlight">In order to secure your reservation, we kindly request a deposit of 30 dollars.</p>
-    <p class="subtext">This deposit serves as a confirmation of your booking and will be deducted from your final bill.</p>
+    <p class="highlight">To secure your reservation, a deposit of 30 dollars is required.</p>
+    <p class="subtext">The deposit will be deducted from your final bill.</p>
 
-    <form class="booking-form" action="#" method="POST">
-      <p class="note">Once you have completed the form below with the necessary details, you will be automatically redirected to our secure payment window.</p>
-
-      <div class="form-group">
-        <input type="text" name="firstName" placeholder="NAME *" required>
-        <input type="text" name="lastName" placeholder="SURNAME *" required>
-      </div>
-
-      <input type="tel" name="phone" placeholder="PHONE *" required>
-      <input type="email" name="email" placeholder="EMAIL *" required>
-      <input type="number" name="guests" placeholder="GUESTS *" required min="1" max="20">
+    <form class="booking-form" id="bookingForm">
+      <p class="note">Complete the form below to receive your booking receipt.</p>
 
       <div class="form-group">
-        <input type="date" name="date" required>
-        <input type="time" name="time" required>
+        <input type="text" name="firstName" id="firstName" placeholder="NAME *" required>
+        <input type="text" name="lastName" id="lastName" placeholder="SURNAME *" required>
       </div>
 
-      <button type="button" class="submit" onclick="location.href='Redirection.html'">BOOK NOW</button>
+      <input type="tel" name="phone" id="phone" placeholder="PHONE *" required>
+      <input type="email" name="email" id="email" placeholder="EMAIL *" required>
+      <input type="number" name="guests" id="guests" placeholder="GUESTS *" required min="1" max="20">
+
+      <div class="form-group">
+        <input type="date" name="date" id="date" required>
+        <input type="time" name="time" id="time" required min="11:00" max="23:00">
+      </div>
+
+      <button type="submit" class="submit">BOOK NOW</button>
     </form>
 
     <p class="thank-you">Thank you for choosing us!</p>
   </section>
+
+  <footer>
+    <div class="footer">
+      <section>
+        <h3>Fauna Kitchen</h3>
+        <p>Curated dishes from across the globe.</p>
+      </section>
+      <section>
+        <h3>LINKS</h3>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </section>
+      <section>
+        <h3>SUPPORT</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </section>
+      <section>
+        <h3>CONTACT</h3>
+        <a href="mailto:support@FaunaKitchen.com">support@FaunaKitchen.com</a>
+        <a href="tel:+1111272747474">(+1)-111-2727-47474</a>
+      </section>
+    </div>
+  </footer>
+
+  <div class="sub-footer">
+    Copyright ©2025 All rights reserved | Fauna Kitchen
+  </div>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const guests = document.getElementById("guests").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+
+      const receiptText = `--- Fauna Kitchen Booking Receipt ---\nName: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\nGuests: ${guests}\nDate: ${date}\nTime: ${time}\n\nThank you for your reservation!`;
+
+      const blob = new Blob([receiptText], { type: "text/plain" });
+      const downloadLink = document.createElement("a");
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = "Fauna_Kitchen_Receipt.txt";
+      downloadLink.textContent = "Download Receipt";
+      downloadLink.className = "download-button";
+
+      document.querySelector(".info-section").appendChild(downloadLink);
+    });
+  </script>
+
 </body>
 </html>
