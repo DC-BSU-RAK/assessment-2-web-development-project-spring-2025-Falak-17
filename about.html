@@ -1,88 +1,235 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us | Delicious Eats</title>
-  <link rel="stylesheet" href="about styles.css" />
-</head>
-<body>
-  <header>
-    <h1>About Us</h1>
-    <nav>
-      <ul class="nav">
-        <li><a href="index.html">Home</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restraunt</title>
+    <link integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="Css/about styles.css" />
+    
+  </head>
+  <body>
+    <nav class="nav-container">
+      <ul>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="reservations.html">Reservations</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact us.html">Contact</a></li>
       </ul>
     </nav>
-  </header>
-
-  <main>
-    <section id="about" class="fade-in">
-      <h2>About Us</h2>
-      <p>Welcome to <strong>Delicious Eats</strong>—where passion meets plate. Every dish is made with fresh, locally sourced ingredients to bring you a delightful experience.</p>
-
-      <h3>Meet Our Chef</h3>
-      <p>Chef Maria is a master of modern culinary arts, fusing global flavors with timeless techniques to craft unforgettable meals.</p>
+    <section class="showcase-area" id="showcase">
+      <div class="showcase-container">
+        <h1 class="main-title" id="home">Eat Right Food</h1>
+        <p>Eat Healty, it is good for our health.</p>
+      </div>
     </section>
 
-    <div class="about-center">
-      <article class="about">
-        <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
+    <section id="about">
+      <div class="about-wrapper container">
         <div class="about-text">
-          <h2 class="about-subtitle">Drinks</h2>
-          <p class="about-info">Quench your thirst with handcrafted beverages, from artisan coffees to refreshing mocktails.</p>
+          <p class="small">About Us</p>
+          <h2>We've beem making healthy food last for 10 years</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ab
+            eos omnis, nobis dignissimos perferendis et officia architecto,
+            fugiat possimus eaque qui ullam excepturi suscipit aliquid optio,
+            maiores praesentium soluta alias asperiores saepe commodi
+            consequatur? Perferendis est placeat facere aspernatur!
+          </p>
         </div>
-      </article>
+        <div class="about-img">
+          <img src="Images/about page.jpg" alt="food" />
+        </div>
+      </div>
+    </section>
+    <section id="food">
+      <h2>Types of food</h2>
+      <div class="food-container container">
+        <div class="food-type fruite">
+          <div class="img-container">
+            <img src="Images/asian food.jpg" alt="error" />
+            <div class="img-content">
+              <h3>ASIAN</h3>
+              <a
+                href="https://en.wikipedia.org/wiki/Asian_cuisine"
+                class="btn btn-primary"
+                target="blank"
+                >learn more</a>
+            </div>
+          </div>
+        </div>
+        <div class="food-type vegetable">
+          <div class="img-container">
+            <img src="Images/european food.jpg" alt="error" />
+            <div class="img-content">
+              <h3>EUROPEAN</h3>
+              <a
+                href="https://en.wikipedia.org/wiki/European_cuisine"
+                class="btn btn-primary"
+                target="blank"
+                >learn more</a>
+            </div>
+          </div>
+        </div>
+        <div class="food-type grin">
+          <div class="img-container">
+            <img src="Images/american food.jpg" alt="error" />
+            <div class="img-content">
+              <h3>AMERICAN</h3>
+              <a
+                href="https://en.wikipedia.org/wiki/American_cuisine"
+                class="btn btn-primary"
+                target="blank"
+                >learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="testimonials">
+      <h2 class="testimonial-title">What Our Customers Say</h2>
+      <div class="testimonial-container container">
+        <div class="testimonial-box">
+          <div class="customer-detail">
+            <div class="customer-photo">
+              <img src="https://i.postimg.cc/5Nrw360Y/male-photo1.jpg" alt="" />
+              <p class="customer-name">Ross Lee</p>
+            </div>
+          </div>
+          <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <p class="testimonial-text">
+            Fauna Kitchen is a hidden gem! The atmosphere is cozy and stylish, and the menu offers flavors from all over the world. Every dish we tried was packed with flavor, and the service was fantastic. Can’t wait to come back!
+          </p>
+         
+        </div>
+        <div class="testimonial-box">
+          <div class="customer-detail">
+            <div class="customer-photo">
+              <img
+                src="https://i.postimg.cc/sxd2xCD2/female-photo1.jpg"
+                alt=""
+              />
+              <p class="customer-name">Amelia Watson</p>
+            </div>
+          </div>
+          <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <p class="testimonial-text">
+            Amazing experience! Loved the international variety—especially the Moroccan tagine and Korean BBQ wings. The staff was friendly and made great recommendations. The vibe is perfect for a relaxed night out.
+          </p>
+         
+        </div>
+        <div class="testimonial-box">
+          <div class="customer-detail">
+            <div class="customer-photo">
+              <img src="https://i.postimg.cc/fy90qvkV/male-photo3.jpg" alt="" />
+              <p class="customer-name">Ben Roy</p>
+            </div>
+          </div>
+          <div class="star-rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+          <p class="testimonial-text">
+            One of my new favorite spots. Beautiful interior, great music, and food that takes you on a global journey. Everything was delicious, and the service was top-notch. Highly recommend!
+          </p>
+         
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="contact-container container">
+        <div class="contact-img">
+          <img src="https://i.postimg.cc/1XvYM67V/restraunt2.jpg" alt="" />
+        </div>
 
-      <article class="about">
-        <div class="about-icon"><i class="fas fa-utensils"></i></div>
-        <div class="about-text">
-          <h2 class="about-subtitle">Healthy Food</h2>
-          <p class="about-info">Enjoy meals that are as nutritious as they are delicious—crafted with your wellness in mind.</p>
+        <div class="form-container">
+          <h2>Contact Us</h2>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="E-Mail" />
+          <textarea
+            cols="30"
+            rows="6"
+            placeholder="Type Your Message"
+          ></textarea>
+          <a href="#" class="btn btn-primary">Submit</a>
         </div>
-      </article>
+      </div>
 
-      <article class="about">
-        <div class="about-icon"><i class="fas fa-leaf"></i></div>
-        <div class="about-text">
-          <h2 class="about-subtitle">Organic Ingredients</h2>
-          <p class="about-info">We proudly source organic ingredients to ensure purity, taste, and sustainability in every bite.</p>
-        </div>
-      </article>
-
-      <article class="about">
-        <div class="about-icon"><i class="fas fa-drumstick-bite"></i></div>
-        <div class="about-text">
-          <h2 class="about-subtitle">White Meat</h2>
-          <p class="about-info">Savor tender, high-quality white meats prepared with bold flavors and finesse.</p>
-        </div>
-      </article>
-
-      <article class="about">
-        <div class="about-icon"><i class="fas fa-fish"></i></div>
-        <div class="about-text">
-          <h2 class="about-subtitle">Seafood</h2>
-          <p class="about-info">From ocean to table—our seafood dishes offer freshness and flair in every serving.</p>
-        </div>
-      </article>
-
-      <article class="about">
-        <div class="about-icon"><i class="fas fa-pepper-hot"></i></div>
-        <div class="about-text">
-          <h2 class="about-subtitle">Hot & Spicy</h2>
-          <p class="about-info">Turn up the heat with our selection of bold, spicy creations that ignite your taste buds.</p>
-        </div>
-      </article>
+    <footer>
+    <div class="footer">
+      <section>
+        <h3>Fauna Kitchen</h3>
+        <p>Curated dishes from across the globe.</p>
+      </section>
+      <section>
+        <h3>LINKS</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact us.html">Contact Us</a>
+      </section>
+      <section>
+        <h3>SUPPORT</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </section>
+      <section>
+        <h3>CONTACT</h3>
+        <a href="mailto:support@FaunaKitchen.com">support@FaunaKitchen.com</a>
+        <a href="tel:+1111272747474">(+1)-111-2727-47474</a>
+      </section>
     </div>
-  </main>
-
-  <footer class="footer">
-    <p class="text">&copy; 2023 Delicious Eats. All rights reserved.</p>
   </footer>
-</body>
+
+  <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
+
+  </body>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on("click", function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            }
+          );
+        } // End if
+      });
+    });
+  </script>
 </html>
