@@ -5,6 +5,15 @@
 @import url('https://fonts.gstatic.com');                                                                                  /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');         /* Importing Source Sans Pro font from Google Fonts */
 
+.footer section { perspective: 1000px;
+                  transform-style: preserve-3d;
+                  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  border-radius: 10px; }
+
+.footer section:hover { transform: translateZ(10px) scale(1.02);
+                        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); }
+
 * {
   margin: 0;
   padding: 0;
