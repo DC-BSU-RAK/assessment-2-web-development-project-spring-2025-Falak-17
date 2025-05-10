@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+      <h1>Contact us</h1>
+      <p>Do you want to learn more about our platform? Contact us and we can set up a demo.</p>
+      <p>For diners with reservation, booking, amendment, or cancellation inquiries, <strong>please reach out to the respective restaurant directly</strong> or visit this <a href="#">page</a>.</p>
+    </div>
+
+    <form class="form-container">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name<span>*</span></label>
+          <input type="text" placeholder="First name" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name<span>*</span></label>
+          <input type="text" placeholder="Last name" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Company</label>
+          <input type="text" placeholder="Company name">
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" placeholder="Country">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Email<span>*</span></label>
+          <input type="email" placeholder="name@mail.com" required>
+        </div>
+        <div class="form-group">
+          <label>Your Phone<span>*</span></label>
+          <input type="tel" placeholder="+00 000 000 000" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>What best describes you?<span>*</span></label>
+          <select required>
+            <option value="">---</option>
+            <option>Customer</option>
+            <option>Partner</option>
+            <option>Vendor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>How did you hear about us?<span>*</span></label>
+          <select required>
+            <option value="">---</option>
+            <option>Google</option>
+            <option>Friend</option>
+            <option>Social Media</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group full-width">
+          <label>Website</label>
+          <input type="url" placeholder="https://www.example.com/">
+        </div>
+        <div class="form-group full-width">
+          <label>Additional comments</label>
+          <textarea placeholder="How can we help you?"></textarea>
+        </div>
+      </div>
+
+      <div class="form-row full-width">
+        <label class="checkbox">
+          <input type="checkbox" required> I agree to the <a href="#">privacy policy</a>.<span>*</span>
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Get in touch with us</button>
+    </form>
+  </div>
+</body>
+</html>
