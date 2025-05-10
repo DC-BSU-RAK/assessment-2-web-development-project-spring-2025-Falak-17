@@ -432,7 +432,7 @@ body { font-family: "Poppins", sans-serif;
   }
 
 #feedback {
-  background-color: white; /* Matches body background */
+  background-color: white; 
   padding: 60px 20px;
   text-align: center;
 }
@@ -446,7 +446,7 @@ body { font-family: "Poppins", sans-serif;
 .feedback-container h2 {
   font-size: 2.8rem;
   margin-bottom: 10px;
-  color: orange; /* Match heading color */
+  color: orange; 
   text-transform: uppercase;
 }
 
