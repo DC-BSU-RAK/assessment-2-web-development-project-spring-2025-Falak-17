@@ -4,11 +4,19 @@
 @import url('https://fonts.gstatic.com');                                                                                  /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');         /* Importing Source Sans Pro font from Google Fonts */
 
+.footer section { perspective: 1000px;
+                  transform-style: preserve-3d;
+                  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  border-radius: 10px; }
+
+.footer section:hover { transform: translateZ(10px) scale(1.02);
+                        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); }
+
 *,html{ scroll-behavior: smooth; }                                                                                         /* Applying smooth scroll behavior */
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }              /* Box sizing for all elements and their pseudo-elements */
 
-/* Custom scrollbar properties */
 :root{ scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
        scrollbar-width: thin !important;
        --white:#fff;
@@ -20,7 +28,6 @@
        --dark:#242426;
        --gray:#5e6f77; }
 
-/* WebKit-specific scrollbar styling */
 ::-webkit-scrollbar { height: 12px;
                       width: 8px;
                       background: var(--dark); }
@@ -50,13 +57,17 @@ a, button{ transition:0.5s; }
                                text-align:center;
                                color:var(--white);
                                font-size:1.6em; }
-
+.nav-container { padding-top: 20px; } 
+  
 .nav-container ul { display: flex;                                                        /* Flexbox layout */
+                    margin-top: 20px;
                     flex-wrap: wrap;                                                      /* Allow wrapping */
-                    list-style: none;                                                     /* Remove bullets */
+                    list-style: none;                                                      /* Remove bullets */
                     gap: 20px;                                                            /* Space between items */
-                    font-size: 30px;                                                      /* Font size */
+                    font-size: 26px;                                                      /* Font size */
                     justify-content: center; }                                            /* Center the navigation items */
+
+.nav-container ul li { padding-top: 10px; }
 
 .nav-container a { color: white;                                                        /* Text color */
                    text-decoration: none;                                                 /* Remove underline */
@@ -161,6 +172,7 @@ a, button{ transition:0.5s; }
                   width:100%;
                   vertical-align:top; }
 .footer section h3 { color:var(--white); }
+.footer section p { color: white;}
 .footer section a { color:var(--gray);
                     display:flex;
                     align-items:center;
