@@ -2,10 +2,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');                         /* Importing Font Awesome for icons */
-@import url('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');                                          /* Importing jQuery library */
-@import url('https://fonts.googleapis.com');                                                                               /* Importing Google Fonts */
-@import url('https://fonts.gstatic.com');                                                                                  /* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');         /* Importing Source Sans Pro font from Google Fonts */
 
 .container,
 .contact-container,
@@ -276,50 +272,120 @@ body { font-family: "Poppins", sans-serif;
 }
 
 #testimonials {
-  padding: 5rem 0;
-  background: rgb(66, 60, 60);
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
 }
 
 .testimonial-title {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 400;
-  color: white;
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #333;
 }
 
-.testimonial-text {
-  font-size: 18px;
+.testimonial-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
 }
 
 .testimonial-container {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  font-size: 1.4rem;
-  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0; /* added spacing so arrows can be visible */
+  box-sizing: border-box;
 }
 
-.testimonial-box .checked {
-  color: #ff9529;
-}
-
-.testimonial-box .testimonial-text {
-  margin: 1rem 0;
-  color: whitesmoke;
+.testimonial-wrapper {
+  overflow: hidden;
+  width: 100%;
 }
 
 .testimonial-box {
-  text-align: center;
-  padding: 1rem;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  min-height: 340px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
 }
 
 .customer-photo img {
-  display: block;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: center;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin: auto;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-text {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.stars {
+  color: #f39c12;
+  font-size: 18px;
+}
+
+.checked {
+  color: #f39c12;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.arrow:hover {
+  background-color: rgb(206, 112, 12);
+}
+
+.left-arrow {
+  left: -50px;
+}
+
+.right-arrow {
+  right: -50px;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial-box {
+    width: 250px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
+
+  .testimonial-slider {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .testimonial-box {
+    scroll-snap-align: center;
+  }
 }
 
 #contact {
@@ -395,42 +461,6 @@ body { font-family: "Poppins", sans-serif;
   background: rgb(65, 65, 65);
 }
 
-.footer { background-color: black;
-          width:100%;
-          display:flex;
-          align-items:top;
-          padding:5rem 0; }
-.footer section { padding:1rem 2rem;
-                  width:100%;
-                  vertical-align:top; }
-.footer section h3 { color: white; }
-.footer section a { color: white;
-                    display:flex;
-                    align-items:center;
-                    white-space:nowrap;
-                    margin:15px 0; }
-.footer section a:hover { color: orange;
-                          transition: color 0.3s ease; }
-.footer section:nth-child(2) a:before,.footer section:nth-child(3) a:before { content:"";
-                                                                              font-family:"FontAwesome";
-                                                                              margin-right:5px;
-                                                                              color: white; }
-.footer section a span { margin:0 10px; }
-.sub-footer { background-color: black;
-              text-align:Center;
-              color: white;
-              padding:1rem 0; }
-              
-@media (max-width:1020px){ .footer{ display:block; }
-                           .footer section { padding:1rem 1rem; }
-                           .footer section:nth-child(2), .footer section:nth-child(3) { width:49%;
-                                                                                        display:inline-block; } }   
-
-@media (max-width: 768px) {
-  .navbar {
-    opacity: 0.95;
-  }
-
 #feedback {
   background-color: white; 
   padding: 60px 20px;
@@ -438,8 +468,10 @@ body { font-family: "Poppins", sans-serif;
 }
 
 .feedback-container {
+  padding: 20px 20px;
+  background-color: black;
   max-width: 700px;
-  height: 500px;
+  height: 550px;
   margin: auto;
 }
 
@@ -453,7 +485,7 @@ body { font-family: "Poppins", sans-serif;
 .feedback-container p {
   font-size: 1.6rem;
   margin-bottom: 30px;
-  color: #ddd;
+  color: white;
 }
 
 .feedback-form input,
@@ -490,6 +522,48 @@ body { font-family: "Poppins", sans-serif;
 
 .feedback-form button:hover {
   background-color: #ff9529;
+}
+
+.footer { background-color: black;
+          width:100%;
+          display:flex;
+          align-items:top;
+          padding:5rem 0; }
+.footer section { padding:1rem 2rem;
+                  width:100%;
+                  vertical-align:top; }
+.footer section h3 { color: white; }
+.footer section a { color: white;
+                    display:flex;
+                    align-items:center;
+                    white-space:nowrap;
+                    margin:15px 0; }
+.footer section a:hover { color: orange;
+                          transition: color 0.3s ease; }
+.footer section:nth-child(2) a:before,.footer section:nth-child(3) a:before { content:"";
+                                                                              font-family:"FontAwesome";
+                                                                              margin-right:5px;
+                                                                              color: white; }
+.footer section a span { margin:0 10px; }
+.sub-footer { background-color: black;
+              text-align:Center;
+              color: white;
+              padding:1rem 0; }
+              
+@media (max-width:1020px){ .footer{ display:block; }
+                           .footer section { padding:1rem 1rem; }
+                           .footer section:nth-child(2), .footer section:nth-child(3) { width:49%;
+                                                                                        display:inline-block; } }   
+
+@media (max-width: 768px) {
+  .navbar {
+    opacity: 0.95;
+  }
+
+@media (max-width: 768px) {
+  .feedback-container h2 {
+    font-size: 2.4rem;
+  }
 }
 
   .navbar-container input[type="checkbox"],
