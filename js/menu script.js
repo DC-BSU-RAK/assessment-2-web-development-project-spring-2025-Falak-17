@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-let cart = [];
+let cart [];
         function addToCart(itemName, itemPrice) {
             cart.push({ name: itemName, price: itemPrice });
             updateCart();
