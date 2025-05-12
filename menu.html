@@ -12,35 +12,39 @@
     </head>
     <body>
     <div class="default-hero-banner">
-    <nav class="nav-container">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="reservations.html">Reservations</a></li>
-        <li><a href="orders.html">Orders</a></li>
-      </ul>
-    </nav>
-    <section>
-    Menu Section
-    </section> 
+        <nav class="nav-container">
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="about.html">About Us</a></li>
+               <li><a href="reservations.html">Reservations</a></li>
+               <li><a href="orders.html">Orders</a></li>
+            </ul>
+        </nav>
+        <section>
+        Menu Section
+        </section> 
+    </div>
+    <div class="cart" id="cart">
+        <h2>Cart</h2>
+        <div id="cart-items"></div>
     </div>
     <div class="list-section">
-     <div class="left-section">
-     <section class="column-1">
-     <h1>Categories</h1>
-        <a href="menu.html">Deals</a>
-        <a href="menu starters.html">Starters</a>
-        <a href="menu maincourse.html">Main course</a>
-        <a href="menu sides.html">Sides</a>
-        <a href="menu dessert.html">Desserts</a>
-     </section>
-     <section class="column-2">
-     <h1>Beverages</h1>
-         <a href="menu cold beverages.html">Cold beverages</a>
-         <a href="menu hot beverages.html">Hot beverages</a>
-         <a href="menu mocktails.html">Mocktails</a>
-     </section>
-     </div>
+    <div class="left-section">
+        <section class="column-1">
+            <h1>Categories</h1>
+            <a href="menu.html">Deals</a>
+            <a href="menu starters.html">Starters</a>
+            <a href="menu maincourse.html">Main course</a>
+            <a href="menu sides.html">Sides</a>
+            <a href="menu dessert.html">Desserts</a>
+        </section>
+        <section class="column-2">
+            <h1>Beverages</h1>
+            <a href="menu cold beverages.html">Cold beverages</a>
+            <a href="menu hot beverages.html">Hot beverages</a>
+            <a href="menu mocktails.html">Mocktails</a>
+        </section>
+    </div>
      <div class="right-section">
      <div class="list-cards">
      <div class="list-card">
@@ -55,6 +59,7 @@
      <span class="list-category">
      <p>Patatas Bravas, Beef Bulgogi with Rice, and Mango Lassi Spritzer.</p>
      </span>
+     <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
      </section>
      </div>
 
@@ -166,3 +171,5 @@
       </div>
       
   <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
+
+  <script src="js/menu script.js" crossorigin="anonymous"></script>
