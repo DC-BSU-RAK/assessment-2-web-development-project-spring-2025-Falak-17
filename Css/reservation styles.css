@@ -5,254 +5,315 @@
 @import url('https://fonts.gstatic.com');                                                                                  /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');         /* Importing Source Sans Pro font from Google Fonts */
 
-.footer section { perspective: 1000px;
-                  transform-style: preserve-3d;
-                  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-                  transition: transform 0.3s ease, box-shadow 0.3s ease;
-                  border-radius: 10px; }
+.footer section {
+  perspective: 1000px; /* Enables 3D transformation */
+  transform-style: preserve-3d; /* Maintains 3D appearance for children */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds depth to the footer */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
 
-.footer section:hover { transform: translateZ(10px) scale(1.02);
-                        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); }
+.footer section:hover {
+  transform: translateZ(10px) scale(1.02); /* Slight zoom and forward movement */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); /* More prominent shadow on hover */
+}
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  box-sizing: border-box; /* Includes padding and border in element's width/height */
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #282626;
-  color: white;
-  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif; /* Clean, modern font */
+  background-color: #282626; /* Dark background for contrast */
+  color: white; /* White text color for readability */
+  line-height: 1.6; /* Comfortable line spacing */
 }
 
 .hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  position: relative; /* Allows child elements to be positioned absolutely */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  overflow: hidden; /* Hides any overflowing content */
 }
 
 .hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 85%;
-  object-fit: cover;
-  z-index: 1;
+  position: absolute; /* Fixed position within the hero */
+  top: 0; /* Aligns image to the top */
+  left: 0; /* Aligns image to the left */
+  width: 100%; /* Full width coverage */
+  height: 85%; /* Covers most of the hero height */
+  object-fit: cover; /* Ensures the image covers the area */
+  z-index: 1; /* Background layer */
 }
 
-.nav-container { position: relative;
-                 padding:5rem;
-                 text-align:left;
-                 color:var(--white);
-                 font-size:1.6em;
-                 z-index: 3; }
+.nav-container {
+  position: relative; /* Allows absolute child positioning */
+  padding: 5rem; /* Ample padding for spacing */
+  text-align: left; /* Aligns text to the left */
+  color: var(--white); /* Uses white color variable */
+  font-size: 1.6em; /* Slightly larger font size */
+  z-index: 3; /* Stays above the hero image */
+}
 
-.nav-container ul { display: flex;                                                        /* Flexbox layout */
-                    flex-wrap: wrap;                                                      /* Allow wrapping */
-                    list-style: none;                                                     /* Remove bullets */
-                    gap: 20px;                                                            /* Space between items */
-                    font-size: 26px;                                                      /* Font size */
-                    justify-content: center; }                                            /* Center the navigation items */
+.nav-container ul {
+  display: flex; /* Horizontal list layout */
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  list-style: none; /* Removes default bullets */
+  gap: 20px; /* Space between items */
+  font-size: 26px; /* Larger font size */
+  justify-content: center; /* Centers the list items */
+}
 
-.nav-container a { color: white;                                                        /* Text color */
-                   text-decoration: none;                                                 /* Remove underline */
-                   position: relative;                                                    /* Set positioning context */
-                   transition: 0.3s; }                                                    /* Smooth transition for hover effects */
+.nav-container a {
+  color: white; /* White text for visibility */
+  text-decoration: none; /* Removes underline */
+  position: relative; /* For hover effects */
+  transition: 0.3s; /* Smooth transition for hover */
+}
 
-.nav-container a::after { content: '';                                                    /* Empty content for the pseudo-element */
-                          position: absolute;                                             /* Position relative to the link */
-                        width: 0%;                                                        /* Start with no width */
-                        height: 2px;                                                      /* Set height */
-                        left: 0;                                                          /* Start at the left edge */
-                        bottom: -3px;                                                     /* Position below the link */
-                        background: orange;                                             /* Orange color */
-                        transition: width 0.3s; }                                         /* Smooth width transition */
+.nav-container a::after {
+  content: ''; /* Creates the underline */
+  position: absolute; /* Positioned relative to the link */
+  width: 0%; /* Initially hidden */
+  height: 2px; /* Thin underline */
+  left: 0; /* Start from the left */
+  bottom: -3px; /* Positioned slightly below the link */
+  background: orange; /* Orange color for accent */
+  transition: width 0.3s; /* Expands on hover */
+}
 
-.nav-container a:hover { color: orange; }                                               /* Change text color to orange */
-
-.nav-container a:hover::after { width: 100%; }
+.nav-container a:hover {
+  color: orange; /* Changes text color on hover */
+}
+.nav-container a:hover::after {
+  width: 100%; /* Full width underline */
+}
 
 .overlay {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  right: 25%;
-  transform: translate(50%, 50%);
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 60px 20px;
-  text-align: center;
-  max-width: 800px;
-  color: #ccc;
-  animation: moveUpDown 1.5s ease-in-out infinite;
+  position: absolute; /* Positioned within the hero */
+  top: 25%; /* Moves overlay down */
+  left: 25%; /* Moves overlay right */
+  right: 25%; /* Sets width */
+  transform: translate(50%, 50%); /* Centers the overlay */
+  z-index: 2; /* Stays above hero image */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  padding: 60px 20px; /* Padding for content */
+  text-align: center; /* Centers text within overlay */
+  max-width: 800px; /* Limits the width */
+  color: #ccc; /* Light text color */
+  animation: moveUpDown 1.5s ease-in-out infinite; /* Smooth up and down animation */
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  color: orange;
-  margin-bottom: 20px;
-  letter-spacing: 3px;
+  font-size: 3.5rem; /* Large heading size */
+  color: orange; /* Accent color */
+  margin-bottom: 20px; /* Spacing from next element */
+  letter-spacing: 3px; /* Adds spacing between letters */
 }
 
 .arrow {
-  display: block;
-  font-size: 2rem;
-  margin-top: 30px;
-  color: orange;
-  animation: moveUpDown 1.5s ease-in-out infinite;
+  display: block; /* Treated as a block element */
+  font-size: 2rem; /* Larger size for emphasis */
+  margin-top: 30px; /* Space above the arrow */
+  color: orange; /* Accent color */
+  animation: moveUpDown 1.5s ease-in-out infinite; /* Smooth vertical movement */
 }
 
 input::placeholder {
-  color: #eee;
+  color: #eee; /* Light gray placeholder text */
 }
 
 .info-section {
-  padding: 60px 20px;
-  max-width: 600px;
-  margin: auto;
-  margin-bottom: 80px;
-  text-align: center;
-  animation: slideIn 1.2s ease-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  padding: 60px 20px; /* Padding for spacing */
+  max-width: 600px; /* Restricts width for readability */
+  margin: auto; /* Centers the section */
+  margin-bottom: 80px; /* Spacing from next section */
+  text-align: center; /* Centered text */
+  animation: slideIn 1.2s ease-out; /* Smooth slide-in effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transformations */
+}
 
 .info-section:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.9);
+  transform: scale(1.02); /* Slight enlargement on hover */
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.9); /* Enhanced shadow */
 }
 
-.highlight {
-  font-size: 19px;
-  color: orange;
-  font-weight: bold;
-  margin-bottom: 10px;
+.highlight { /* Class for highlighted text */
+  font-size: 19px; /* Sets font size */
+  color: orange; /* Sets text color */
+  font-weight: bold; /* Makes text bold */
+  margin-bottom: 10px; /* Adds space below element */
 }
 
-.subtext, .thank-you, .note {
-  color: #bbb;
-  margin-bottom: 20px;
+/* Styling for subtext, thank-you messages, and notes */
+.subtext, .thank-you, .note { /* Classes for secondary text styles */
+  color: #bbb; /* Sets text color to light gray */
+  margin-bottom: 20px; /* Adds space below element */
 }
 
-.booking-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid orange;
-  padding: 30px;
+.booking-form { /* Class for the booking form container */
+  display: flex; /* Uses flex layout */
+  flex-direction: column; /* Stacks items vertically */
+  gap: 15px; /* Space between items */
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
+  border: 1px solid orange; /* Orange border */
+  padding: 30px; /* Space inside the container */
 }
 
-.booking-form input, .booking-form button {
-  padding: 12px;
-  background: #111;
-  border: 1px solid orange;
-  color: #eee;
-  width: 100%;
+.booking-form input, .booking-form button { /* Common styles for form inputs and buttons */
+  padding: 12px; /* Space inside elements */
+  background: #111; /* Dark background */
+  border: 1px solid orange; /* Orange border */
+  color: #eee; /* Light text color */
+  width: 100%; /* Full width */
 }
 
-.booking-form button {
-  background-color: #c6871a;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.booking-form button { /* Button appearance and interactivity */
+  background-color: #c6871a; /* Button background color */
+  color: #000; /* Button text color */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  position: relative; /* Relative for inner animation */
+  overflow: hidden; /* Prevents overflow */
 }
 
-.booking-form button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 200%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: skewX(-30deg);
-  transition: left 0.5s ease;
+.booking-form button::before { /* Shine effect on button */
+  content: ''; /* Empty content for visual effect */
+  position: absolute; /* Absolute positioning within button */
+  top: 0; /* Aligns to top */
+  left: -50%; /* Start outside the button */
+  width: 200%; /* Wide shine effect */
+  height: 100%; /* Full height */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white shine */
+  transform: skewX(-30deg); /* Tilt effect */
+  transition: left 0.5s ease; /* Smooth transition */
 }
 
-.booking-form button:hover::before {
-  left: 100%;
+.booking-form button:hover::before { /* Move shine on hover */
+  left: 100%; /* Move shine to the right */
 }
 
-.booking-form button:hover {
-  background-color: orange;
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.booking-form button:hover { /* Hover state for button */
+  background-color: orange; /* Change background color */
+  transform: scale(1.05); /* Slightly enlarge */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow */
 }
 
-.footer { background-color: black;
-          width:100%;
-          display:flex;
-          align-items:top;
-          padding:5rem 0; }
-.footer section { padding:1rem 2rem;
-                  width:100%;
-                  vertical-align:top; }
-.footer section h3 { color:var(--white); }
-.footer section a { color:var(--gray);
-                    display:flex;
-                    align-items:center;
-                    white-space:nowrap;
-                    margin:15px 0; }
-.footer section a:hover { color: orange;
-                          transition: color 0.3s ease; }
-.footer section:nth-child(2) a:before,.footer section:nth-child(3) a:before { content:"";
-                                                                              font-family:"FontAwesome";
-                                                                              margin-right:5px;
-                                                                              color:var(--white); }
-.footer section a span { margin:0 10px; }
-.sub-footer { background-color: black;
-              text-align:Center;
-              color:var(--gray);
-              padding:1rem 0; }
-              
-@media (max-width:1020px){ .footer{ display:block; }
-                           .footer section { padding:1rem 1rem; }
-                           .footer section:nth-child(2), .footer section:nth-child(3) { width:49%;
-                                                                                        display:inline-block; } }   
-
-.download-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #e7c275;
-  color: #000;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
+.footer { /* Main footer container */
+  background-color: black; /* Dark background */
+  width: 100%; /* Full width */
+  display: flex; /* Flex layout */
+  align-items: top; /* Align items to top */
+  padding: 5rem 0; /* Space inside footer */
 }
 
-.download-button:hover {
-  background-color: #f0d38a;
-  transform: scale(1.05);
+.footer section { /* Individual sections in the footer */
+  padding: 1rem 2rem; /* Space inside section */
+  width: 100%; /* Full width */
+  vertical-align: top; /* Align to top */
 }
 
-@media (max-width: 600px) {
-  .form-group {
-    flex-direction: column;
+.footer section h3 { /* Footer section headings */
+  color: var(--white); /* White color from variable */
+}
+
+.footer section a { /* Link styles in footer */
+  color: var(--gray); /* Gray text color */
+  display: flex; /* Flex layout */
+  align-items: center; /* Center vertically */
+  white-space: nowrap; /* Prevent line breaks */
+  margin: 15px 0; /* Vertical spacing */
+}
+
+.footer section a:hover { /* Change link color on hover */
+  color: orange; /* Orange color on hover */
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+.footer section:nth-child(2) a:before, .footer section:nth-child(3) a:before { /* Icon styling */
+  content: ""; /* Unicode arrow symbol */
+  font-family: "FontAwesome"; /* Icon font */
+  margin-right: 5px; /* Space after icon */
+  color: var(--white); /* White color */
+}
+
+.footer section a span { /* Space between link text and icon */
+  margin: 0 10px; /* Horizontal spacing */
+}
+
+.sub-footer { /* Bottom section of the footer */
+  background-color: black; /* Dark background */
+  text-align: center; /* Centered text */
+  color: var(--gray); /* Gray text */
+  padding: 1rem 0; /* Vertical spacing */
+}
+
+@media (max-width: 1020px) { /* Applies when viewport width is 1020px or less */
+  .footer { /* Footer layout adjustment for small screens */
+    display: block; /* Stack footer sections vertically */
   }
-
-  .download-button {
-    width: 100%;
-    padding: 14px;
+  .footer section { /* Individual footer sections on smaller screens */
+    padding: 1rem 1rem; /* Reduced padding for compact layout */
+  }
+  .footer section:nth-child(2), .footer section:nth-child(3) { /* Adjustments for specific footer sections */
+    width: 49%; /* Set half-width for inline display */
+    display: inline-block; /* Display sections side by side */
   }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.download-button { /* Class for the download button */
+  margin-top: 20px; /* Space above the button */
+  padding: 12px 24px; /* Padding for button size */
+  background-color: #e7c275; /* Light golden background */
+  color: #000; /* Black text color */
+  border-radius: 8px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for interactions */
 }
 
-@keyframes moveUpDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.download-button:hover { /* Styles when the button is hovered */
+  background-color: #f0d38a; /* Lighter shade of gold */
+  transform: scale(1.05); /* Slightly enlarges */
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+@media (max-width: 600px) { /* Applies when viewport width is 600px or less */
+  .form-group { /* Form group adjustments for small screens */
+    flex-direction: column; /* Stack form elements vertically */
+  }
+  .download-button { /* Adjusted download button on smaller screens */
+    width: 100%; /* Full-width button */
+    padding: 14px; /* Increased padding for better touch interaction */
+  }
+}
+
+@keyframes fadeInUp { /* Smooth upward fade animation */
+  from { /* Starting point of animation */
+    opacity: 0; /* Fully transparent */
+    transform: translateY(20px); /* Move from below */
+  }
+  to { /* Ending point of animation */
+    opacity: 1; /* Fully opaque */
+    transform: translateY(0); /* At original position */
+  }
+}
+
+@keyframes moveUpDown { /* Vertical bouncing animation */
+  0%, 100% { /* Initial and final states */
+    transform: translateY(0); /* No movement */
+  }
+  50% { /* Midpoint of animation */
+    transform: translateY(-10px); /* Move upwards */
+  }
+}
+
+@keyframes pulse { /* Smooth scaling animation */
+  0%, 100% { /* Initial and final states */
+    transform: scale(1); /* Original size */
+  }
+  50% { /* Midpoint of animation */
+    transform: scale(1.05); /* Slightly larger */
+  }
 }
