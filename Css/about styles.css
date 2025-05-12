@@ -45,6 +45,18 @@ body { font-family: "Poppins", sans-serif;
   margin: auto;
 }
 
+.btn-primary { background-color: orange;
+               color: white;
+               padding: 2px 4px;
+               border-radius: 5px;
+               font-size: 1.6rem;
+               text-decoration: none;
+               transition: background-color 0.3s ease;
+               display: inline-block;
+               margin: 9px 0; }
+
+.btn-primary:hover { background-color: #ff9529; }
+
 .nav-container { position: relative;
                  padding:3rem;
                  text-align:left;
@@ -296,7 +308,7 @@ body { font-family: "Poppins", sans-serif;
   justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0; /* added spacing so arrows can be visible */
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -318,8 +330,8 @@ body { font-family: "Poppins", sans-serif;
 }
 
 .customer-photo img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
