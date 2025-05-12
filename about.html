@@ -4,9 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant</title>
-    <link integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="Css/about styles.css" />
     
   </head>
@@ -251,51 +248,7 @@
 
   <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
 
+  <script src="js/about script.js"></script>
+
 </body>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("a").on("click", function (event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-          $("html, body").animate(
-            {
-              scrollTop: $(hash).offset().top,
-            },
-            800,
-            function () {
-              window.location.hash = hash;
-            }
-          );
-        }
-      });
-    });
-    const slider = document.querySelector('.testimonial-slider');
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-    const testimonialBoxes = document.querySelectorAll('.testimonial-box');
-
-    const boxWidth = testimonialBoxes[0].offsetWidth + 20; // 20 is the gap
-    const visibleBoxes = 3;
-    const totalBoxes = testimonialBoxes.length;
-    const maxIndex = Math.ceil(totalBoxes / visibleBoxes) - 1;
-    let currentIndex = 0;
-
-    function updateSliderPosition() {
-      const offset = currentIndex * boxWidth * visibleBoxes;
-      slider.style.transform = `translateX(-${offset}px)`;
-    }
-
-    rightArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
-      updateSliderPosition();
-    });
-
-    leftArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1) < 0 ? maxIndex : currentIndex - 1;
-      updateSliderPosition();
-    });
-  </script>
 </html>
