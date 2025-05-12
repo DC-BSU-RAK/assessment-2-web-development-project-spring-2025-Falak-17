@@ -113,6 +113,44 @@ a, button{ transition:0.5s; }
                                                                                                                       display:block; }
 .list-section .left-section .column-1 a:hover,.list-section .left-section .column-2 a:hover { color:var(--white); }
 
+.list-card button { background-color: var(--darkyellow);
+                        color: var(--black);
+                        border: none;
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        border-radius: 5px; }
+
+.cart-icon {
+            font-size: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+.cart { position: fixed;
+        top: 0;
+        right: 0;
+        background-color: white;
+        width: 300px;
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 15px;
+        display: none;
+ }
+.cart h2 {
+            font-size: 18px;
+        }
+.cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+
 /* Card container styling */
 .list-cards { width:100%;
               display:flex;
