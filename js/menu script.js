@@ -1,4 +1,3 @@
-// script.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuItems = document.querySelectorAll(".list-group-item");
@@ -6,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const priceInput = document.getElementById("priceInput");
   const filterBtn = document.getElementById("filterBtn");
 
-  // Category filter
   menuItems.forEach(item => {
     item.addEventListener("click", () => {
       const category = item.textContent.trim().toLowerCase();
@@ -18,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Price filter
   if (filterBtn && priceInput) {
     filterBtn.addEventListener("click", () => {
       const maxPrice = parseFloat(priceInput.value);
@@ -32,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Favorite / Add to Cart Clicks
   document.querySelectorAll(".fa-heart").forEach(icon => {
     icon.addEventListener("click", () => {
       icon.classList.toggle("text-danger");
