@@ -26,7 +26,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="reservations.html">Reservations</a></li>
-        <li><a href="orders.html">Orders</a></li>
+        <li><a href="location.html">Location</a></li>
       </ul>
     </nav>
     <section>
@@ -71,7 +71,7 @@
                     <p><b>Tiramisu (Italy)</b></p>
                     <p>A creamy and indulgent Italian classic with rich coffee flavors.</p>
                     <span class="price">$ 9.99</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Tiramisu', 9.99)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/tiramisu.jpeg" alt="">
@@ -87,7 +87,7 @@
                     <p><b>Baklava (Middle East)</b></p>
                     <p>A decadent dessert that offers a perfect balance of crisp and syrupy sweetness.</p>
                     <span class="price">$ 7.99</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Baklava', 7.99)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/baklava.jpg" alt="">
@@ -103,7 +103,7 @@
                     <p><b>Churros with Chocolate Sauce (Spain)</b></p>
                     <p>A delightful and crispy treat with a hint of warmth and sweetness.</p>
                     <span class="price">$ 6.50</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Churros', 6.50)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/churros.jpeg" alt="">
@@ -119,7 +119,7 @@
                 <p><b>Pavlova (Australia/New Zealand)</b></p>
                 <p>Light, airy, and elegantly topped with vibrant fruit, perfect for a sweet finale.</p>
                 <span class="price">$ 8.99</span>
-                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Pavlova', 8.99)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/pavlova.jpeg" alt="">
@@ -135,7 +135,7 @@
                 <p><b>Chocolate Lava Cake (France)</b></p>
                 <p>A decadent dessert that oozes with warm, velvety chocolate.</p>
                 <span class="price">$ 10.50</span>
-                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Chocolate lava cake', 10.50)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/cake.jpeg" alt="">
@@ -151,7 +151,7 @@
                     <p><b>Crème Brûlée (France)</b></p>
                     <p>A sophisticated dessert with a creamy interior and a crackling top.</p>
                     <span class="price">$ 8.50</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Crème brûlée', 8.50)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/creme.jpeg" alt="">
@@ -167,7 +167,7 @@
                     <p><b>Cheesecake (USA)</b></p>
                     <p>Rich, smooth, and subtly sweet, this classic dessert never fails to impress.</p>
                     <span class="price">$ 9.00</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Cheesecake', 9.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/cheesecake.jpeg" alt="">
@@ -183,7 +183,7 @@
                     <p><b>Mochi Ice Cream (Japan)</b></p>
                     <p>A unique, bite-sized dessert that offers a delightful contrast of textures.</p>
                     <span class="price">$ 5.99</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Mochi ice cream', 5.99)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/mochi.jpeg" alt="">
@@ -199,7 +199,7 @@
                    <p><b>Ras Malai (India)</b></p>
                    <p>A luxurious Indian dessert that melts in your mouth with its milky, aromatic sweetness.</p>
                    <span class="price">$ 6.99</span>
-                   <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                   <button class="add-to-cart" onclick="addToCart('Ras malai', 6.99)">Add to Cart</button>
                </section>
                <section>
                    <img src="Images/ras malai.jpg" alt="">
@@ -215,7 +215,7 @@
                 <p><b>Panna Cotta (Italy)</b></p>
                 <p>A light and smooth Italian dessert, elegantly garnished for a refreshing end to the meal.</p>
                 <span class="price">$ 7.50</span>
-                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Panna cotta', 7.50)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/panna cotta.jpeg" alt="">
@@ -239,7 +239,7 @@
     <h3>LINKS</h3>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-    <a href="orders.html">Orders</a>
+    <a href="location.html">Location</a>
     </section>
     <section>
     <h3>OTHER</h3>
@@ -259,3 +259,4 @@
     </div>
     
 <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
+<script src="js/Cart.js"></script>
