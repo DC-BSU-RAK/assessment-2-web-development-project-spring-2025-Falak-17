@@ -195,235 +195,240 @@ color:var(--white);
   border-radius: 5px; /* Rounded corners */
 }
 
-.cart-wrapper {
-  background-color: white;
-  color: black;
-  padding: 20px;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-family: Arial, sans-serif;
-  z-index: 10000;
+.cart-wrapper { 
+  background-color: white; /* Background color of the cart */
+  color: black; /* Text color */
+  padding: 20px; /* Space inside the cart */
+  position: fixed; /* Fixed position on screen */
+  top: 20px; /* Distance from top */
+  right: 20px; /* Distance from right */
+  font-family: Arial, sans-serif; /* Font style */
+  z-index: 10000; /* Stack on top of most elements */
 }
 
 .cart-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
+  position: fixed; /* Fixed icon position */
+  top: 20px; /* Distance from top */
+  right: 20px; /* Distance from right */
+  background-color: #333; /* Icon background */
+  color: #fff; /* Icon color */
+  padding: 10px; /* Space inside icon */
+  border-radius: 50%; /* Circular icon */
+  cursor: pointer; /* Pointer on hover */
 }
 
 .cart-icon i {
-  font-size: 24px;
+  font-size: 24px; /* Icon size */
 }
 
 .cart-icon #cart-count {
-  background-color: #e74c3c;
-  color: #fff;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 12px;
-  font-weight: bold;
-  position: absolute;
-  top: -10px;
-  right: -10px;
+  background-color: #e74c3c; /* Red badge color */
+  color: #fff; /* Text color */
+  border-radius: 50%; /* Circular badge */
+  padding: 2px 6px; /* Space inside badge */
+  font-size: 12px; /* Small font */
+  font-weight: bold; /* Bold number */
+  position: absolute; /* Positioned relative to icon */
+  top: -10px; /* Move up */
+  right: -10px; /* Move right */
 }
 
 .cart {
-  position: fixed;
-  top: 70px;
-  right: 20px;
-  width: 300px;
-  background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  display: none;
-  z-index: 1000;
+  position: fixed; /* Fixed cart panel */
+  top: 70px; /* Below the cart icon */
+  right: 20px; /* Distance from right */
+  width: 300px; /* Width of cart */
+  background-color: #fff; /* White background */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside */
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Stack above main content */
 }
 
 .cart h2 {
-  margin: 0 0 10px 0;
-  font-size: 18px;
+  margin: 0 0 10px 0; /* Margin below heading */
+  font-size: 18px; /* Heading size */
 }
 
 .cart-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  display: flex; /* Flex layout */
+  justify-content: space-between; /* Space between items */
+  padding: 10px 0; /* Vertical padding */
+  border-bottom: 1px solid #ccc; /* Line under each item */
 }
 
 .cart-item .quantity-btn {
-  padding: 5px 10px;
-  margin: 0 5px;
-  cursor: pointer;
+  padding: 5px 10px; /* Space inside buttons */
+  margin: 0 5px; /* Space between buttons */
+  cursor: pointer; /* Pointer on hover */
 }
 
 .cart-total {
-  font-weight: bold;
-  margin-top: 15px;
+  font-weight: bold; /* Bold total */
+  margin-top: 15px; /* Space above total */
 }
 
 #checkoutButton {
-  width: 100%;
-  padding: 10px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
+  width: 100%; /* Full width button */
+  padding: 10px; /* Space inside button */
+  background-color: #3498db; /* Blue background */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer on hover */
+  margin-top: 10px; /* Space above button */
 }
 
 #checkoutButton:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #2980b9; /* Darker on hover */
+  transform: translateY(-2px); /* Slight lift */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
 #checkoutButton:active {
-  background-color: #1c6fa5;
-  transform: translateY(1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #1c6fa5; /* Even darker on click */
+  transform: translateY(1px); /* Move down */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .cart-item-name {
-    flex: 1;
-    margin-left: 8px;
-    font-size: 1rem;
-    color: black;
+  flex: 1; /* Take remaining space */
+  margin-left: 8px; /* Space from left */
+  font-size: 1rem; /* Standard font */
+  color: black; /* Text color */
 }
 
 .cart-item-quantity {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex; /* Flex layout */
+  align-items: center; /* Align center vertically */
+  gap: 5px; /* Space between buttons */
 }
 
 .quantity-btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 2px 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+  background-color: #333; /* Button background */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 2px 6px; /* Inside padding */
+  cursor: pointer; /* Pointer on hover */
+  font-size: 1rem; /* Standard font size */
+  transition: background-color 0.3s; /* Smooth hover */
 }
 
 .quantity-btn:hover {
-    background-color: #555;
+  background-color: #555; /* Darker on hover */
 }
 
 .add-to-cart {
-    background-color: #008cba;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    margin-top: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s; }
+  background-color: #008cba; /* Blue background */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  padding: 8px 12px; /* Space inside button */
+  margin-top: 10px; /* Space above */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth hover */
+}
 
 .add-to-cart:hover {
-    background-color: #006f8a; }
+  background-color: #006f8a; /* Darker blue on hover */
+}
 
 .empty-cart {
-    text-align: center;
-    color: black;
-    font-size: 1rem;
-    margin: 10px 0; }
-
-.list-cards{
-width:100%;
-display:flex;
-align-items:top;
-flex-wrap: wrap; }
-
-.list-cards .list-card{
-width:45%;
-margin:10px;
-border:1px solid rgba(1,1,1,0.1);
-border-radius:5px;
-overflow:hidden;
-padding:0;
-background-color:var(--white);
-display:flex;
-align-items:top;
+  text-align: center; /* Centered text */
+  color: black; /* Text color */
+  font-size: 1rem; /* Font size */
+  margin: 10px 0; /* Vertical spacing */
 }
 
-.list-cards .list-card:nth-child(1),.list-cards .list-card:nth-child(2){
-margin-top:0;
+.list-cards {
+  width: 100%; /* Full width */
+  display: flex; /* Flex layout */
+  align-items: top; /* Align items to top */
+  flex-wrap: wrap; /* Wrap to next line */
 }
 
-.list-cards .list-card section{
-width:100%;
-position:relative;
-overflow:hidden;
+.list-cards .list-card {
+  width: 45%; /* Card width */
+  margin: 10px; /* Spacing */
+  border: 1px solid rgba(1,1,1,0.1); /* Light border */
+  border-radius: 5px; /* Rounded edges */
+  overflow: hidden; /* Hide overflow */
+  padding: 0; /* No padding */
+  background-color: var(--white); /* Use white variable */
+  display: flex; /* Flex layout */
+  align-items: top; /* Align to top */
 }
 
-.list-cards .list-card section:nth-child(1){
-padding:0.5rem 1rem;
+.list-cards .list-card:nth-child(1), .list-cards .list-card:nth-child(2) {
+  margin-top: 0; /* No margin for first two cards */
 }
 
-.list-cards .list-card section img{
-width:100%;
-height:100%;
-object-fit:cover;
+.list-cards .list-card section {
+  width: 100%; /* Full width */
+  position: relative; /* Needed for overlay */
+  overflow: hidden; /* Hide overflow */
 }
 
-.list-cards .list-card section p{
-line-height:1.4em;
-font-size:13px;
+.list-cards .list-card section:nth-child(1) {
+  padding: 0.5rem 1rem; /* Padding inside section */
 }
 
-.list-cards .list-card section .price{
-font-size:1.3em;
+.list-cards .list-card section img {
+  width: 100%; /* Full width image */
+  height: 100%; /* Full height image */
+  object-fit: cover; /* Maintain aspect ratio */
 }
 
-.list-category{
-background-color:rgba(1,1,1,0.7);
-display:block;
-width:100%;
-height:100%;
-position:absolute;
-left:-100%;
-top:0;
-padding:1rem 2rem;
-transition:0.5s;
+.list-cards .list-card section p {
+  line-height: 1.4em; /* Line spacing */
+  font-size: 13px; /* Small text */
 }
 
-.list-category p{
-color:var(--white);
+.list-cards .list-card section .price {
+  font-size: 1.3em; /* Larger price text */
 }
 
-.list-cards .list-card:hover  .list-category{
-left:0%;
+.list-category {
+  background-color: rgba(1,1,1,0.7); /* Semi-transparent background */
+  display: block; /* Block element */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: absolute; /* Overlapping content */
+  left: -100%; /* Hidden offscreen */
+  top: 0; /* Align top */
+  padding: 1rem 2rem; /* Padding inside overlay */
+  transition: 0.5s; /* Smooth slide in */
 }
 
+.list-category p {
+  color: var(--white); /* White text */
+}
 
-@media (max-width:920px){
-.list-section{
-display:block;
+.list-cards .list-card:hover .list-category {
+  left: 0%; /* Slide in on hover */
 }
-.list-section .left-section{
-width:100%;
-}
-.list-section .left-section .column-1 a:not(:first-child),.list-section .left-section .column-2 a:not(:first-child){
-padding:0.5rem 0rem;
-border-bottom:0px solid rgba(1,1,1,0.1);
-display:inline-block;
-}
-.list-section .left-section .column-1 a:after,.list-section .left-section .column-2 a:after{
-content:"";
-font-family:"FontAwesome";
-display:inline-block;
-margin:0 10px;
-}
+
+@media (max-width: 920px) {
+  .list-section {
+    display: block; /* Stack content */
+  }
+  .list-section .left-section {
+    width: 100%; /* Full width */
+  }
+  .list-section .left-section .column-1 a:not(:first-child),
+  .list-section .left-section .column-2 a:not(:first-child) {
+    padding: 0.5rem 0rem; /* Vertical spacing */
+    border-bottom: 0px solid rgba(1,1,1,0.1); /* Remove border */
+    display: inline-block; /* Inline block for links */
+  }
+  .list-section .left-section .column-1 a:after,
+  .list-section .left-section .column-2 a:after {
+    content: ""; /* Arrow icon from FontAwesome */
+    font-family: "FontAwesome"; /* Use FontAwesome font */
+    display: inline-block; /* Inline block arrow */
+    margin: 0 10px; /* Space around arrow */
+  }
 }
 
 /* Footer styling */
