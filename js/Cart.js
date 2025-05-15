@@ -1,34 +1,32 @@
-// Full Cart System Implementation
-function toggleCart() {
-  const cartList = document.getElementById("cartList");
-  if (cartList.style.display === "none" || cartList.style.display === "") {
-    cartList.style.display = "block";
-  } else {
-    cartList.style.display = "none";
-  }
-} 
-
-document.addEventListener("click", (event) => {
-  const cartList = document.getElementById("cartList");
-  const cartIcon = document.querySelector(".cart-icon");
-
-  if (!cartList.contains(event.target) && !cartIcon.contains(event.target)) {
-    cartList.style.display = "none";
-  }
-});
+// Combined Cart System Implementation
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cart = {};
-  const cartArea = document.getElementById("cartArea");
-  let cartTotal = 0;
+  const cartArea = document.getElementById("cartItems");
+  const totalPrice = document.getElementById("totalPrice");
+  const cartCount = document.getElementById("cart-count");
+  const cartList = document.getElementById("cartList");
+  let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
+  // Save cart to local storage
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  // Toggle Cart Visibility
+  window.toggleCart = function () {
+    cartList.style.display = cartList.style.display === "none" ? "block" : "none";
+  };
+
+  // Render cart items and total
   function renderCart() {
     cartArea.innerHTML = "";
-    cartTotal = 0;
+    let cartTotal = 0;
+    let itemCount = 0;
 
     for (const item in cart) {
       const { cost, qty } = cart[item];
       cartTotal += cost * qty;
+      itemCount += qty;
 
       const itemBox = document.createElement("div");
       itemBox.className = "cart-item";
@@ -41,25 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class='quantity-btn' onclick='updateCart("${item}", 1)'>+</button>
         </div>
       `;
-
       cartArea.appendChild(itemBox);
     }
 
-    const totalBox = document.createElement("div");
-    totalBox.className = "cart-total";
-    totalBox.textContent = `Total: $${cartTotal.toFixed(2)}`;
-    cartArea.appendChild(totalBox);
+    totalPrice.textContent = `Total: $${cartTotal.toFixed(2)}`;
+    cartCount.textContent = itemCount;
 
-    const proceedButton = document.createElement("button");
-    proceedButton.textContent = "Proceed to Payment";
-    proceedButton.onclick = function() {
-      alert("Proceeding to payment...");
-      // Implement payment logic here
-    };
-    cartArea.appendChild(proceedButton);
+    saveCart();
   }
 
-  window.addToCart = function(item, cost) {
+  // Add item to cart
+  window.addToCart = function (item, cost) {
     if (cart[item]) {
       cart[item].qty++;
     } else {
@@ -68,11 +58,15 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   };
 
-  window.updateCart = function(item, change) {
+  // Update item quantity in cart
+  window.updateCart = function (item, change) {
     if (cart[item]) {
       cart[item].qty += change;
       if (cart[item].qty <= 0) delete cart[item];
       renderCart();
     }
   };
+
+  // Initialize cart display
+  renderCart();
 });
