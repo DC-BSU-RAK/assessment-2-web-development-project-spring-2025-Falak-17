@@ -26,7 +26,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="reservations.html">Reservations</a></li>
-        <li><a href="orders.html">Orders</a></li>
+        <li><a href="location.html">Location</a></li>
       </ul>
     </nav>
     <section>
@@ -71,7 +71,7 @@
                     <p><b>Masala Chai</b></p>
                     <p>An aromatic and spiced Indian tea that warms your senses with every sip.</p>
                     <span class="price">$ 1.50</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Masala chai', 1.50)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/chai.jpeg" alt="">
@@ -87,7 +87,7 @@
                     <p><b>Mexican Hot Chocolate</b></p>
                     <p>A rich and indulgent hot chocolate with a hint of cinnamon and spice.</p>
                     <span class="price">$ 4.50</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Mexican hot chocolate', 4.50)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/hot chocolate.jpeg" alt="">
@@ -103,7 +103,7 @@
                     <p><b>London Fog Latte</b></p>
                     <p>A creamy and fragrant blend of Earl Grey tea, steamed milk, and vanilla essence.</p>
                     <span class="price">$4.75</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('London fog latte', 4.75)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/fog latte.jpeg" alt="">
@@ -119,7 +119,7 @@
                 <p><b>Turkish Coffee</b></p>
                 <p>A strong and intense coffee brewed with finely ground beans for a rich, bold flavor.</p>
                 <span class="price">$ 3.50</span>
-                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Turksih coffee', 3.50)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/turkish coffee.jpeg" alt="">
@@ -135,7 +135,7 @@
                 <p><b>Hot Buttered Rum</b></p>
                 <p>A comforting, buttery drink with a hint of spice and a smooth, velvety texture.</p>
                 <span class="price">$ 4.99</span>
-                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Hot buttered rum', 4.99)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/rum.jpeg" alt="">
@@ -151,7 +151,7 @@
                     <p><b>Saffron Milk</b></p>
                     <p>A luxurious and fragrant milk drink infused with the rich, earthy aroma of saffron.</p>
                     <span class="price">$ 5.25</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Saffron milk', 5.25)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/milk.jpeg" alt="">
@@ -167,7 +167,7 @@
                     <p><b>Ginger Honey Tea</b></p>
                     <p>A soothing and warming tea that blends the zing of ginger with the sweetness of honey.</p>
                     <span class="price">$ 3.00</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Ginger Honey Tea', 3.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/ginger tea.jpeg" alt="">
@@ -183,7 +183,7 @@
                     <p><b>Irish Coffee</b></p>
                     <p>A rich coffee with a creamy top, delivering a slightly sweet and bold flavor.</p>
                     <span class="price">$ 4.75</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Irish coffee', 4.75)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/irish coffee.jpeg" alt="">
@@ -207,7 +207,7 @@
     <h3>LINKS</h3>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-    <a href="orders.html">Orders</a>
+    <a href="location.html">Location</a>
     </section>
     <section>
     <h3>OTHER</h3>
@@ -227,3 +227,4 @@
     </div>
     
 <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
+<script src="js/Cart.js"></script>
