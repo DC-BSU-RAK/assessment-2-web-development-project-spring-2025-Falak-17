@@ -33,6 +33,18 @@
     <h1>Hot Beverages</h1>
     </section>
     </div>
+    <section id="cartArea" class="cart-wrapper">
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fa fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+    <div class="cart-dropdown" id="cartList" style="display: none;">
+    <h2>Cart</h2>
+    <div id="cartItems">Your cart is empty.</div>
+    <div id="totalPrice">Total: $0.00</div>
+       <button id="checkoutButton" onclick="checkout()">Proceed to payment</button>
+    </div>
+    </section>
     <div class="list-section">
      <div class="left-section">
      <section class="column-1">
