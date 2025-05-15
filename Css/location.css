@@ -1,0 +1,253 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); /* Importing Font Awesome for icons */
+
+* {
+  margin: 0;                    /* Remove default margin */
+  padding: 0;                   /* Remove default padding */
+  box-sizing: border-box;      /* Use border-box model for all elements */
+}
+
+body {
+  background-color: #f3f4f6;   /* Light gray background */
+  padding: 2rem;               /* Padding around body content */
+  min-height: 100vh;           /* Full viewport height */
+  display: flex;               /* Flexbox layout */
+  flex-direction: column;      /* Stack children vertically */
+  perspective: 1000px;         /* Add perspective for 3D transforms */
+  animation: fadeInScale 0.5s ease-in-out; /* Smooth entry animation */
+}
+
+/* -------------------------- HEADER -------------------------- */
+.default-hero-banner {
+  margin-top: -30px;           /* Negative margin to overlap above */
+  width: 100%;                 /* Full width */
+  background-size: cover;      /* Background covers container */
+  background-attachment: fixed;/* Fixed background while scrolling */
+}
+
+.default-hero-banner img {
+  opacity: 0;                                    /* Start invisible */
+  transform: rotateY(-10deg) translateY(20px) scale(0.95); /* Initial 3D effect */
+  animation: mapReveal 1.2s ease forwards;       /* Animate to final state */
+  width: 100%;                                   /* Full width */
+  height: 660px;                                 /* Tall image */
+  object-fit: cover;                             /* Keep image aspect ratio */
+  position: absolute;                            /* Absolute to layer behind */
+  top: 0;
+  left: 0;
+  z-index: -1;                                   /* Behind content */
+}
+
+@keyframes mapReveal {
+  to {
+    opacity: 1;                                  /* Fade in */
+    transform: rotateY(0deg) translateY(0) scale(1); /* Neutral position */
+  }
+}
+
+.default-hero-banner section {
+  padding: 5rem;                /* Inner spacing */
+  text-align: center;           /* Centered text */
+  color: orange;                /* Orange color */
+  font-size: 1.6em;             /* Bigger font */
+}
+
+/* -------------------------- NAVIGATION -------------------------- */
+.nav-container h1 {
+  font-size: 44px;              /* Large heading */
+  margin-top: 20px;             /* Top space */
+  color: orange;                /* Orange text */
+}
+
+.nav-container {
+  padding-top: 20px;            /* Padding above nav */
+}
+
+.nav-container ul {
+  display: flex;                /* Flex layout for links */
+  margin-top: 20px;             /* Spacing above nav list */
+  flex-wrap: wrap;              /* Wrap if too many items */
+  list-style: none;             /* Remove bullets */
+  gap: 20px;                    /* Space between nav items */
+  font-size: 26px;              /* Larger font size */
+  justify-content: center;      /* Centered items */
+}
+
+.nav-container a {
+  color: white;                 /* White link text */
+  text-decoration: none;        /* No underlines */
+  position: relative;           /* For underline animation */
+  transition: 0.3s;             /* Smooth transitions */
+}
+
+.nav-container a:hover {
+  color: orange;                /* Highlight on hover */
+}
+
+.nav-container a:hover::after {
+  width: 100%;                  /* Underline expands fully */
+}
+
+/* -------------------------- PAGE & GRID -------------------------- */
+.page {
+  margin-top: 625px;            /* Offset to sit below hero */
+  padding: 2rem;                /* Inner spacing */
+  background-color: #fff;       /* White background */
+  border-radius: 0.5rem;        /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  flex: 1;                      /* Take available space */
+}
+
+.grid-container {
+  display: grid;                /* Grid layout */
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 1rem;                    /* Space between grid items */
+}
+
+/* -------------------------- BUTTON -------------------------- */
+.main-button {
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transitions */
+  transform-style: preserve-3d;                          /* Allow 3D effects */
+  backface-visibility: hidden;                           /* Hide back face */
+  background-color: #139bb6;                             /* Blue background */
+  color: #fff;                                           /* White text */
+  padding: 0.5rem 1rem;                                  /* Button padding */
+  border: none;                                          /* No border */
+  border-radius: 0.5rem;                                 /* Rounded corners */
+  cursor: pointer;                                       /* Pointer on hover */
+}
+
+.main-button:hover {
+  transform: rotateX(15deg) scale(1.05);                 /* 3D lift on hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);               /* Elevated shadow */
+  background-color: #0c788e;                             /* Darker blue */
+}
+
+/* -------------------------- MAP -------------------------- */
+.map-frame {
+  width: 100%;                    /* Full width */
+  height: 500px;                  /* Tall iframe */
+  border: none;                   /* No border */
+  border-radius: 0.5rem;          /* Rounded corners */
+  margin-top: 2rem;               /* Spacing above map */
+}
+
+/* -------------------------- FOOTER -------------------------- */
+.footer {
+  background-color: black;       /* Dark footer */
+  width: 100%;                   /* Full width */
+  display: flex;                 /* Flexbox layout */
+  justify-content: space-around; /* Spread content */
+  flex-wrap: wrap;               /* Allow wrapping */
+  padding: 3rem 2rem;            /* Padding around footer */
+  color: white;                  /* White text */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 2;                    /* On top of map/image */
+  gap: 2rem;                     /* Space between sections */
+}
+
+.footer section {
+  flex: 1 1 200px;               /* Flexible layout */
+  min-width: 200px;             /* Minimum width */
+  padding: 1rem;                /* Inner padding */
+}
+
+.footer section h3 {
+  color: white;                 /* White headings */
+  font-size: 18px;              /* Heading size */
+  margin-bottom: 1rem;         /* Space under heading */
+}
+
+.footer section a {
+  color: white;                 /* Link text */
+  display: flex;               /* Align items */
+  align-items: center;        /* Vertically centered */
+  text-decoration: none;      /* No underline */
+  margin: 0.5rem 0;           /* Space above/below links */
+}
+
+.footer section a:hover {
+  color: orange;              /* Highlight link */
+}
+
+.footer section:hover {
+  transform: none;            /* No transform on whole box */
+  box-shadow: none;           /* No shadow on box hover */
+}
+
+/* -------------------------- RESPONSIVE (Tablet) -------------------------- */
+@media (max-width: 1020px) {
+  .footer {
+    flex-direction: column;        /* Stack vertically */
+    align-items: flex-start;       /* Align left */
+  }
+
+  .footer section {
+    width: 100%;                   /* Full width on small screen */
+  }
+}
+
+/* -------------------------- RESPONSIVE (Mobile) -------------------------- */
+@media (max-width: 768px) {
+  .nav-container ul {
+    flex-direction: column;        /* Stack nav items */
+    gap: 15px;                     /* Smaller spacing */
+    font-size: 22px;               /* Slightly smaller text */
+  }
+
+  .default-hero-banner img {
+    height: 250px;                 /* Shorter hero image */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;    /* Single column grid */
+  }
+
+  .map-frame {
+    height: 300px;                 /* Shorter map on small screens */
+  }
+}
+
+/* -------------------------- EXTRA SMALL SCREENS -------------------------- */
+@media (max-width: 480px) {
+  .nav-container h1 {
+    font-size: 36px;               /* Smaller heading */
+  }
+
+  .main-button {
+    padding: 0.5rem;               /* Compact button */
+  }
+
+  .footer {
+    padding: 2rem 1rem;            /* Smaller padding */
+  }
+
+  .footer section {
+    width: 100%;                   /* Full width */
+    padding: 1rem;                 /* Inner spacing */
+  }
+}
+
+/* -------------------------- KEYFRAME ANIMATIONS -------------------------- */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);        /* Start small */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);           /* Full size */
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);   /* Slide up from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);      /* In place */
+  }
+}
