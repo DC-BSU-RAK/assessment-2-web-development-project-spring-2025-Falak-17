@@ -50,6 +50,18 @@
         <a href="menu mocktails.html">Mocktails</a>
      </section>
      </div>
+     <section id="cartArea" class="cart-wrapper">
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fa fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+    <div class="cart-dropdown" id="cartList" style="display: none;">
+    <h2>Cart</h2>
+    <div id="cartItems">Your cart is empty.</div>
+    <div id="totalPrice">Total: $0.00</div>
+       <button id="checkoutButton" onclick="checkout()">Proceed to payment</button>
+    </div>
+    </section>
      <div class="right-section">
      <div class="list-cards">
 
@@ -59,7 +71,7 @@
                     <p><b>Bruschetta (Italy)</b></p>
                     <p>A vibrant and refreshing way to start your meal, bursting with Mediterranean charm.</p>
                     <span class="price">$ 18.99</span>
-                       <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                       <button class="add-to-cart" onclick="addToCart('Bruschetta', 18.99)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/bruschetta.jpg" alt="">
@@ -74,8 +86,8 @@
                     <h1>2</h1>
                     <p><b>Vegetable Samosa (Pakistan)</b></p>
                     <p>A crispy, golden delight that packs a flavorful punch with every bite.</p>
-                    <span class="price">$ 16.50</span>
-                       <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <span class="price">$ 4.00</span>
+                       <button class="add-to-cart" onclick="addToCart('Samosa', 4.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/samosa.jpg" alt="">
@@ -91,7 +103,7 @@
                     <p><b>Kimchi Jeon (Korea)</b></p>
                     <p>A savory sensation with a perfect balance of tang and spice, ideal for adventurous palates.</p>
                     <span class="price">$ 17.99</span>
-                       <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                       <button class="add-to-cart" onclick="addToCart('Kimchi jeon', 17.99)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/kimchi.jpg" alt="">
@@ -106,8 +118,8 @@
                 <h1>4</h1>
                 <p><b>Tteokbokki (Korea)</b></p>
                 <p>A bold and satisfying dish that combines chewy textures with a spicy kick.</p>
-                <span class="price">$ 19.50</span>
-                   <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <span class="price">$ 10.50</span>
+                   <button class="add-to-cart" onclick="addToCart('Tteokbokki', 10.50)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/tteokbokki.jpg" alt="">
@@ -122,8 +134,8 @@
                 <h1>5</h1>
                 <p><b>Falafel with Hummus (Middle East)</b></p>
                 <p>A harmonious blend of crispy and creamy, offering a taste of tradition.</p>
-                <span class="price">$ 21.99</span>
-                   <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <span class="price">$ 6.50</span>
+                   <button class="add-to-cart" onclick="addToCart('falafel', 6.50)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/Falafel with hummus.jpg" alt="">
@@ -138,8 +150,8 @@
                     <h1>6</h1>
                     <p><b>Gyoza Dumplings (Japan)</b></p>
                     <p>Delicate parcels of flavor, perfect for sharing or savoring solo.</p>
-                    <span class="price">$ 21.99</span>
-                       <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <span class="price">$ 11.00</span>
+                       <button class="add-to-cart" onclick="addToCart('Gyoza dumplings', 11.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/Gyoza.webp" alt="">
@@ -154,8 +166,8 @@
                     <h1>7</h1>
                     <p><b>Patatas Bravas (Spain)</b></p>
                     <p>A tapas favorite that brings warmth and comfort to your table.</p>
-                    <span class="price">$ 21.99</span>
-                       <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <span class="price">$ 8.50</span>
+                       <button class="add-to-cart" onclick="addToCart('patatas bravas', 8.50)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/patatas bravas.jpg" alt="">
@@ -170,8 +182,8 @@
                     <h1>8</h1>
                     <p><b>French Onion Soup (France)</b></p>
                     <p>A rich, aromatic starter that envelops you in layers of deep flavor.</p>
-                    <span class="price">$ 21.99</span>
-                       <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <span class="price">$ 9.00</span>
+                       <button class="add-to-cart" onclick="addToCart('French onion soup', 9.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/onion soup.jpg" alt="">
@@ -186,8 +198,8 @@
                     <h1>9</h1>
                     <p><b>Edamame with Sea Salt (Japan)</b></p>
                     <p>A simple yet satisfying way to begin your dining experience.</p>
-                    <span class="price">$ 21.99</span>
-                       <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <span class="price">$ 8.75</span>
+                       <button class="add-to-cart" onclick="addToCart('Edamame', 8.75)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/edamane.jpg" alt="">
@@ -231,3 +243,4 @@
     </div>
     
 <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
+<script src="js/Cart.js"></script>
