@@ -26,7 +26,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="reservations.html">Reservations</a></li>
-        <li><a href="orders.html">Orders</a></li>
+        <li><a href="location.html">Location</a></li>
       </ul>
     </nav>
     <section>
@@ -71,7 +71,7 @@
                     <p><b>Iced Matcha Latte</b></p>
                     <p>A refreshing, creamy drink with a vibrant green hue, perfect for revitalizing your senses with a hint of earthy sweetness.</p>
                     <span class="price">$ 5.99</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Iced matcha latte', 5.99)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/iced latte.jpg" alt="">
@@ -87,7 +87,7 @@
                     <p><b>Passion Fruit Iced Tea</b></p>
                     <p>A tropical infusion that combines the bright, zesty flavor of passion fruit with the smooth, calming notes of tea.</p>
                     <span class="price">$ 4.50</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Passion fruit iced tea', 4.50)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/passion fruit.jpg" alt="">
@@ -103,7 +103,7 @@
                     <p><b>Mango Lassi</b></p>
                     <p>A creamy, tangy delight that balances the natural sweetness of mango with the cool, soothing texture of yogurt.</p>
                     <span class="price">$ 6.25</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Mango lassi', 6.25)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/mango lassi.webp" alt="">
@@ -119,7 +119,7 @@
                 <p><b>Berry Lemonade Fizz</b></p>
                 <p>A sparkling burst of berry goodness blended with tart lemonade, offering a fruity escape in every sip.</p>
                 <span class="price">$ 4.99</span>
-                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Berry lemonade', 4.99)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/berry lemonade.jpeg" alt="">
@@ -135,14 +135,12 @@
                 <p><b>Coconut Cold Brew</b></p>
                 <p>A smooth, rich coffee experience with a hint of tropical flair, balancing boldness and creaminess effortlessly.</p>
                 <span class="price">$ 5.75</span>
-                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Coconut cold brew', 5.75)">Add to Cart</button>
             </section>
             <section>
                 <img src="Images/coconut cold brew.jpeg" alt="">
                 <span class="list-category">
-                <p>Rich and bold cold brew coffee, creamy coconut milk, fragrant vanilla syrup, and ice for a cool finish.
-
-                </p>
+                <p>Rich and bold cold brew coffee, creamy coconut milk, fragrant vanilla syrup, and ice for a cool finish.</p>
                 </span>
             </section>
         </div>
@@ -153,7 +151,7 @@
                     <p><b>Pepsi</b></p>
                     <p>A classic cola with a bold, refreshing taste and just the right amount of sweetness.</p>
                     <span class="price">$ 3.00</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Pepsi', 3.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/pepsi.jpeg" alt="">
@@ -169,7 +167,7 @@
                     <p><b>7up</b></p>
                     <p>A crisp, citrus-flavored soda with a clean and invigorating lemon-lime taste.</p>
                     <span class="price">$ 3.00</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('7up', 3.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/7up.webp" alt="">
@@ -185,12 +183,28 @@
                     <p><b>Mirinda</b></p>
                     <p>A vibrant, fruity soda with a bold orange flavor that’s both sweet and tangy.</p>
                     <span class="price">$ 3.00</span>
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="addToCart('Mirinda', 3.00)">Add to Cart</button>
                 </section>
                 <section>
                     <img src="Images/mirinda.jpeg" alt="">
                     <span class="list-category">
                         <p>Carbonated water, orange flavor, sugar, citric acid.</p>
+                    </span>
+                </section>
+            </div>
+
+        <div class="list-card">
+                <section>
+                    <h1>9</h1>
+                    <p><b>Water bottle</b></p>
+                    <p>Stay hydrated with nature's simplest and most essential beverage.</p>
+                    <span class="price">$ 1.00</span>
+                    <button class="add-to-cart" onclick="addToCart('Watter bottle', 1.00)">Add to Cart</button>
+                </section>
+                <section>
+                    <img src="Images/water.webp" alt="">
+                    <span class="list-category">
+                        <p>Pure, refreshing water sourced from natural springs, ensuring a crisp and clean taste.</p>
                     </span>
                 </section>
             </div>
@@ -209,7 +223,7 @@
     <h3>LINKS</h3>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-    <a href="orders.html">Orders</a>
+    <a href="location.html">Location</a>
     </section>
     <section>
     <h3>OTHER</h3>
@@ -229,3 +243,4 @@
     </div>
     
 <a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
+<script src="js/Cart.js"></script>
