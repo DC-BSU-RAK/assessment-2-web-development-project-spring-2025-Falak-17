@@ -16,8 +16,7 @@
 /* Hover effect for footer section */
 .footer section:hover { /* Applies on hover */
   transform: translateZ(10px) scale(1.02); /* Move slightly forward and enlarge */
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
-}
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */ }
 
 /* Smooth scrolling for all elements */
 *, html { /* Global smooth scroll behavior */
@@ -74,29 +73,39 @@ a { /* Styling for all links */
   text-decoration: none; /* Remove underline */
 }
 a, button { /* Links and buttons common transition */
-  transition: 0.5s; /* Smooth transition */
-}
+  transition: 0.5s; /* Smooth transition */ }
 
 /* Header styling */
 .default-hero-banner { /* Hero banner styling */
   margin-top: -30px; /* Negative margin to overlap */
   width: 100%; /* Full width */
-  background-image: url("https://i.ibb.co/DgRMWdv/default-bg.jpg"); /* Background image */
   background-size: cover; /* Cover the area */
   background-attachment: fixed; /* Fixed position while scrolling */
 }
 
+.default-hero-banner img { /* Image inside hero banner */
+  width: 100%; /* Full width */
+  height: 350px; /* Full viewport height */
+  object-fit: cover; /* Cover the area */
+  position: absolute; /* Absolute positioning */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  z-index: -1; /* Behind other elements */ }
+
 .default-hero-banner section { /* Content inside hero banner */
   padding: 5rem; /* Space inside the section */
   text-align: center; /* Centered text */
-  color: var(--white); /* White text color */
-  font-size: 1.6em; /* Slightly larger text */
-}
+  color: orange; /* White text color */
+  font-size: 1.6em; /* Slightly larger text */ }
+
+.nav-container h1 { 
+  font-size: 44px; /* Standard text size */
+  margin-top: 20px; /* Space above the paragraph */
+  color: orange; /* orange text color */}
 
 /* Navigation bar styling */
 .nav-container { /* Container for navigation */
-  padding-top: 20px; /* Space at the top */
-}
+  padding-top: 20px; /* Space at the top */ }
 
 .nav-container ul { /* Navigation list */
   display: flex; /* Flex layout for list items */
@@ -186,38 +195,163 @@ color:var(--white);
   border-radius: 5px; /* Rounded corners */
 }
 
-/* Cart icon styling */
+.cart-wrapper {
+  background-color: whitesmoke;
+  color: black;
+  padding: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-family: Arial, sans-serif;
+  z-index: 10000;
+}
+
 .cart-icon {
-  font-size: 24px; /* Large icon size */
-  margin-left: 10px; /* Spacing on the left */
-  cursor: pointer; /* Change cursor to pointer */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-/* Cart container styling */
+.cart-icon #cart-count {
+  background-color: #e74c3c;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
 .cart {
-  position: fixed; /* Fixed to the top right */
-  top: 0;
-  right: 0;
-  background-color: white; /* Light background */
-  width: 300px; /* Fixed width */
-  max-height: 400px; /* Limit height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  border: 1px solid #ddd; /* Light border */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
-  padding: 15px; /* Inner spacing */
-  display: none; /* Hidden by default */
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  display: none;
+  z-index: 1000;
 }
 
-/* Cart heading styling */
 .cart h2 {
-  font-size: 18px; /* Medium heading size */
+  margin: 0 0 10px 0;
+  font-size: 18px;
 }
 
-/* Cart item layout */
 .cart-item {
-  display: flex; /* Flex layout */
-  justify-content: space-between; /* Space between items */
-  margin: 5px 0; /* Vertical spacing */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-item .quantity-btn {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+#checkoutButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#checkoutButton:hover {
+  background-color: #2980b9;
+}
+
+/* Cart icon styling */
+.cart {
+    position: fixed;
+    top: 20%;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    padding: 16px;
+    z-index: 10;
+}
+
+.cart h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #333;
+    text-align: center;
+}
+
+.cart-item-name {
+    flex: 1;
+    margin-left: 8px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: #555;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.add-to-cart {
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #006f8a;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #777;
+    font-size: 1rem;
+    margin: 10px 0;
 }
 
 /* Card container styling */
@@ -348,14 +482,8 @@ margin:0 10px;
 
 /* Footer responsive adjustments */
 @media (max-width: 1020px) {
-  .footer {
-    display: block; /* Stacked layout on small screens */
-  }
-  .footer section {
-    padding: 1rem 1rem; /* Reduced padding */
-  }
+  .footer { display: block; /* Stacked layout on small screens */ }
+  .footer section {  padding: 1rem 1rem; /* Reduced padding */ }
   .footer section:nth-child(2), .footer section:nth-child(3) {
     width: 49%; /* Half width for side-by-side */
-    display: inline-block; /* Inline block layout */
-  }
-}
+    display: inline-block; /* Inline block layout */ } }
