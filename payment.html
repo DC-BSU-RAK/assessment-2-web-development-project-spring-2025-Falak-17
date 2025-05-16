@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="Css/payment.css" />
+</head>
+<body onload="displayCartItems()">
+
+  <div class="form">
+    <h2>Payment & Delivery Details</h2>
+
+    <label for="fullName">Full Name</label>
+    <input id="fullName" type="text" placeholder="Enter full name">
+
+    <label for="phone">Phone Number</label>
+    <input id="phone" type="text" placeholder="Enter valid phone number">
+
+    <label for="address">Delivery Address</label>
+    <input id="address" type="text" placeholder="Street, City, etc.">
+    <button type="button" onclick="redirectToCurrentLocation()">📍 Use My Location</button>
+
+    <label for="notes">Additional Info</label>
+    <textarea id="notes" placeholder="Anything else?"></textarea>
+
+    <h3>Choose Payment Method</h3>
+    <div class="payment-methods">
+      <button type="button" class="payment-method active" id="CreditCard" onclick="selectPaymentMethod('CreditCard')">Pay with Credit Card</button>
+      <button type="button" class="payment-method" id="Cash" onclick="selectPaymentMethod('Cash')">Pay with Cash</button>
+      <button type="button" class="payment-method" id="Paypal" onclick="selectPaymentMethod('Paypal')">Pay with PayPal</button>
+    </div>
+
+    <input type="hidden" id="selectedMethod" value="CreditCard">
+
+    <!-- Credit Card Section -->
+    <div id="creditCardDetails">
+      <input id="cardNumber" placeholder="Enter Card Number">
+      <input id="cardExpiry" placeholder="Enter Expiration Date">
+      <input id="cardHolder" placeholder="Enter Cardholder Name">
+      <input id="cardCVV" placeholder="CVV">
+    </div>
+
+    <!-- Cash Info -->
+    <div id="cashDetails" style="display:none;">
+      <p>You have selected to pay with <strong>Cash</strong>. Please have the exact amount ready at delivery.</p>
+    </div>
+
+    <!-- PayPal Info -->
+    <div id="paypalDetails" style="display:none;">
+      <p>You will be redirected to PayPal after submitting your order.</p>
+    </div>
+
+    <div class="cart-summary">
+    <h3>🛒 Your Cart</h3>
+    <div id="cartItemsContainer"></div>
+    <p class="cart-total"><strong>Total:</strong> $<span id="cartTotal">0.00</span></p>
+  </div>
+
+    <button onclick="processPayment()">💳 Pay & Download Receipt</button>
+  </div>
+
+  <script src="js/payment.js"></script>
+</body>
+</html>
