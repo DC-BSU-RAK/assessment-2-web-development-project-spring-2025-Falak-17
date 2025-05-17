@@ -84,31 +84,6 @@
     Copyright ©2025 All rights reserved | Fauna Kitchen
   </div>
 
-  <script>
-    document.getElementById("bookingForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const firstName = document.getElementById("firstName").value;
-      const lastName = document.getElementById("lastName").value;
-      const phone = document.getElementById("phone").value;
-      const email = document.getElementById("email").value;
-      const guests = document.getElementById("guests").value;
-      const date = document.getElementById("date").value;
-      const time = document.getElementById("time").value;
-
-      const receiptText = `--- Fauna Kitchen Booking Receipt ---\nName: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\nGuests: ${guests}\nDate: ${date}\nTime: ${time}\n\nThank you for your reservation!`;
-
-      const blob = new Blob([receiptText], { type: "text/plain" });
-      const downloadLink = document.createElement("a");
-      downloadLink.href = URL.createObjectURL(blob);
-      downloadLink.download = "Fauna_Kitchen_Receipt.txt";
-      downloadLink.textContent = "Download Receipt";
-      downloadLink.className = "download-button";
-
-      document.querySelector(".info-section").appendChild(downloadLink);
-    });
-  </script>
-
 </body>
 </html>
 
