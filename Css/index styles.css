@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap'); /* Import fonts */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'); /* Import fonts */
+
 * { margin: 0;                                                                            /* Remove default margin */
     padding: 0;                                                                           /* Remove default padding */
     box-sizing: border-box; }                                                             /* Include padding and border in element's total width and height */
