@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const categoryButtons = document.querySelectorAll(".list-group-item");
 const menuCards = document.querySelectorAll(".card");
 
-// Filter by category
+// Filter by category 
 categoryButtons.forEach(button => 
 { button.addEventListener("click", () => {
     const category = button.textContent.trim().toLowerCase();
